@@ -65,7 +65,7 @@ Item
                 }
                 width: UM.Theme.getSize("standard_arrow").width
                 height: UM.Theme.getSize("standard_arrow").height
-                color: "black"
+                color: UM.Theme.getColor("favorites_header_text_active")
                 source: brand_section.expanded ? UM.Theme.getIcon("ChevronSingleDown") : UM.Theme.getIcon("ChevronSingleLeft")
             }
         }

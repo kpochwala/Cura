@@ -30,16 +30,16 @@ Item
             width: parent.width
         }
 
-        Image
-        {
-            id: curaImage
-            anchors.horizontalCenter: parent.horizontalCenter
-            source: UM.Theme.getImage("welcome_cura")
-            fillMode: Image.PreserveAspectFit
-            width: UM.Theme.getSize("welcome_wizard_content_image_big").width
-            sourceSize.width: width
-            sourceSize.height: height
-        }
+        // Image
+        // {
+        //     id: curaImage
+        //     anchors.horizontalCenter: parent.horizontalCenter
+        //     source: UM.Theme.getImage("welcome_cura")
+        //     fillMode: Image.PreserveAspectFit
+        //     width: UM.Theme.getSize("welcome_wizard_content_image_big").width
+        //     sourceSize.width: width
+        //     sourceSize.height: height
+        // }
 
         // Filler item
         Item
@@ -53,8 +53,8 @@ Item
             id: titleLabel
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Text.AlignHCenter
-            text: catalog.i18nc("@label", "Welcome to Ultimaker Cura")
-            color: UM.Theme.getColor("primary_button")
+            text: catalog.i18nc("@label", "Welcome to Zmorph Divid")
+            color: UM.Theme.getColor("primary")
             font: UM.Theme.getFont("huge_bold")
             renderType: Text.NativeRendering
         }

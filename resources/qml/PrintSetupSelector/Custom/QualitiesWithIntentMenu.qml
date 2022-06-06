@@ -311,6 +311,13 @@ Popup
                 Cura.Actions.manageProfiles.trigger()
             }
         }
+        Rectangle
+        {
+            height: UM.Theme.getSize("default_lining").width
+            anchors.left: parent.left
+            anchors.right: parent.right
+            color: borderColor
+        }
         // spacer
         Item
         {

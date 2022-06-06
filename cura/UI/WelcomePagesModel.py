@@ -260,10 +260,10 @@ class WelcomePagesModel(ListModel):
                           {"id": "data_collections",
                            "page_url": self._getBuiltinWelcomePagePath("DataCollectionsContent.qml"),
                            },
-                          {"id": "cloud",
-                           "page_url": self._getBuiltinWelcomePagePath("CloudContent.qml"),
-                           "should_show_function": self.shouldShowCloudPage,
-                           },
+                        #   {"id": "cloud",
+                        #    "page_url": self._getBuiltinWelcomePagePath("CloudContent.qml"),
+                        #    "should_show_function": self.shouldShowCloudPage,
+                        #    },
                           {"id": "add_network_or_local_printer",
                            "page_url": self._getBuiltinWelcomePagePath("AddNetworkOrLocalPrinterContent.qml"),
                            "next_page_id": "machine_actions",
@@ -281,19 +281,19 @@ class WelcomePagesModel(ListModel):
                            "page_url": self._getBuiltinWelcomePagePath("FirstStartMachineActionsContent.qml"),
                            "should_show_function": self.shouldShowMachineActions,
                            },
-                          {"id": "whats_new",
-                           "page_url": self._getBuiltinWelcomePagePath("WhatsNewContent.qml"),
-                           "next_page_button_text": self._catalog.i18nc("@action:button", "Skip"),
-                           },
-                          {"id": "changelog",
-                           "page_url": self._getBuiltinWelcomePagePath("ChangelogContent.qml"),
-                           "next_page_button_text": self._catalog.i18nc("@action:button", "Finish"),
-                           },
+                        #   {"id": "whats_new",
+                        #    "page_url": self._getBuiltinWelcomePagePath("WhatsNewContent.qml"),
+                        #    "next_page_button_text": self._catalog.i18nc("@action:button", "Skip"),
+                        #    },
+                        #   {"id": "changelog",
+                        #    "page_url": self._getBuiltinWelcomePagePath("ChangelogContent.qml"),
+                        #    "next_page_button_text": self._catalog.i18nc("@action:button", "Finish"),
+                        #    },
                           ]
 
         pages_to_show = all_pages_list
-        if show_whats_new_only:
-            pages_to_show = list(filter(lambda x: x["id"] == "whats_new", all_pages_list))
+        # if show_whats_new_only:
+        #     pages_to_show = list(filter(lambda x: x["id"] == "whats_new", all_pages_list))
 
         self._pages = pages_to_show
         self.setItems(self._pages)

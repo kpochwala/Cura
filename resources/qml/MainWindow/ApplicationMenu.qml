@@ -24,7 +24,25 @@ Item
     {
         id: applicationMenu
 
-        FileMenu { title: catalog.i18nc("@title:menu menubar:toplevel", "&File") }
+        FileMenu { 
+            title: catalog.i18nc("@title:menu menubar:toplevel", "&File") 
+            style: MenuStyle {
+                itemDelegate.label: Label {
+                    function replaceText(txt) {
+                        var index = txt.indexOf("&");
+                        if(index >= 0)
+                        txt = txt.replace(txt.substr(index, 2), ("<u>" + txt.substr(index + 1, 1) +"</u>"));
+                        return txt;
+                    }
+                    color: styleData.selected || styleData.open ? "white" : "black"
+                    text: replaceText(styleData.text)
+                }
+                itemDelegate.background: Rectangle {
+                    color: styleData.selected || styleData.open ? "#202D35" : "white"
+                    radius: styleData.selected ? 3 : 0 
+                }
+            }            
+        }
 
         Menu
         {
@@ -44,9 +62,44 @@ Item
             MenuItem { action: Cura.Actions.groupObjects }
             MenuItem { action: Cura.Actions.mergeObjects }
             MenuItem { action: Cura.Actions.unGroupObjects }
+
+            style: MenuStyle {
+                itemDelegate.label: Label {
+                    function replaceText(txt) {
+                        var index = txt.indexOf("&");
+                        if(index >= 0)
+                        txt = txt.replace(txt.substr(index, 2), ("<u>" + txt.substr(index + 1, 1) +"</u>"));
+                        return txt;
+                    }
+                    color: styleData.selected || styleData.open ? "white" : "black"
+                    text: replaceText(styleData.text)
+                }
+                itemDelegate.background: Rectangle {
+                    color: styleData.selected || styleData.open ? "#202D35" : "white"
+                    radius: styleData.selected ? 3 : 0 
+                }
+            }
         }
 
-        ViewMenu { title: catalog.i18nc("@title:menu menubar:toplevel", "&View") }
+        ViewMenu { 
+            title: catalog.i18nc("@title:menu menubar:toplevel", "&View") 
+            style: MenuStyle {
+                itemDelegate.label: Label {
+                    function replaceText(txt) {
+                        var index = txt.indexOf("&");
+                        if(index >= 0)
+                        txt = txt.replace(txt.substr(index, 2), ("<u>" + txt.substr(index + 1, 1) +"</u>"));
+                        return txt;
+                    }                    
+                    color: styleData.selected || styleData.open ? "white" : "black"
+                    text: replaceText(styleData.text)
+                }
+                itemDelegate.background: Rectangle {
+                    color: styleData.selected || styleData.open ? "#202D35" : "white"
+                    radius: styleData.selected ? 3 : 0 
+                }
+            }        
+        }
 
         SettingsMenu
         {
@@ -58,6 +111,22 @@ Item
             //- https://doc.qt.io/qt-5/macos-issues.html#menu-bar
             //- https://doc.qt.io/qt-5/qmenubar.html#qmenubar-as-a-global-menu-bar
             title: (Qt.platform.os == "osx") ? "&Settings" : catalog.i18nc("@title:menu menubar:toplevel", "&Settings")
+            style: MenuStyle {
+                itemDelegate.label: Label {
+                    function replaceText(txt) {
+                        var index = txt.indexOf("&");
+                        if(index >= 0)
+                        txt = txt.replace(txt.substr(index, 2), ("<u>" + txt.substr(index + 1, 1) +"</u>"));
+                        return txt;
+                    }                    
+                    color: styleData.selected || styleData.open ? "white" : "black"
+                    text: replaceText(styleData.text)
+                }
+                itemDelegate.background: Rectangle {
+                    color: styleData.selected || styleData.open ? "#202D35" : "white"
+                    radius: styleData.selected ? 3 : 0 
+                }
+            }            
         }
 
         Menu
@@ -96,6 +165,22 @@ Item
                 onObjectAdded: extensionMenu.insertItem(index, object)
                 onObjectRemoved: extensionMenu.removeItem(object)
             }
+            style: MenuStyle {
+                itemDelegate.label: Label {
+                    function replaceText(txt) {
+                        var index = txt.indexOf("&");
+                        if(index >= 0)
+                        txt = txt.replace(txt.substr(index, 2), ("<u>" + txt.substr(index + 1, 1) +"</u>"));
+                        return txt;
+                    }                    
+                    color: styleData.selected || styleData.open ? "white" : "black"
+                    text: replaceText(styleData.text)
+                }
+                itemDelegate.background: Rectangle {
+                    color: styleData.selected || styleData.open ? "#202D35" : "white"
+                    radius: styleData.selected ? 3 : 0 
+                }
+            }            
         }
 
         Menu
@@ -112,6 +197,22 @@ Item
             title: (Qt.platform.os == "osx") ? "&Preferences" : catalog.i18nc("@title:menu menubar:toplevel", "P&references")
 
             MenuItem { action: Cura.Actions.preferences }
+            style: MenuStyle {
+                itemDelegate.label: Label {
+                    function replaceText(txt) {
+                        var index = txt.indexOf("&");
+                        if(index >= 0)
+                        txt = txt.replace(txt.substr(index, 2), ("<u>" + txt.substr(index + 1, 1) +"</u>"));
+                        return txt;
+                    }                    
+                    color: styleData.selected || styleData.open ? "white" : "black"
+                    text: replaceText(styleData.text)
+                }
+                itemDelegate.background: Rectangle {
+                    color: styleData.selected || styleData.open ? "#202D35" : "white"
+                    radius: styleData.selected ? 3 : 0 
+                }
+            }            
         }
 
         Menu
@@ -126,6 +227,22 @@ Item
             MenuSeparator { }
             MenuItem { action: Cura.Actions.whatsNew }
             MenuItem { action: Cura.Actions.about }
+            style: MenuStyle {
+                itemDelegate.label: Label {
+                    function replaceText(txt) {
+                        var index = txt.indexOf("&");
+                        if(index >= 0)
+                        txt = txt.replace(txt.substr(index, 2), ("<u>" + txt.substr(index + 1, 1) +"</u>"));
+                        return txt;
+                    }                    
+                    color: styleData.selected || styleData.open ? "white" : "black"
+                    text: replaceText(styleData.text)
+                }
+                itemDelegate.background: Rectangle {
+                    color: styleData.selected || styleData.open ? "#202D35" : "white"
+                    radius: styleData.selected ? 3 : 0 
+                }
+            }            
         }
     }
 

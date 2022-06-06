@@ -18,13 +18,13 @@ endif()
 
 option(GENERATE_TRANSLATIONS "Should the translations be generated?" ON)
 
-set(CURA_APP_NAME "cura" CACHE STRING "Short name of Cura, used for configuration folder")
-set(CURA_APP_DISPLAY_NAME "Ultimaker Cura" CACHE STRING "Display name of Cura")
-set(CURA_VERSION "master" CACHE STRING "Version name of Cura")
-set(CURA_BUILDTYPE "" CACHE STRING "Build type of Cura, eg. 'PPA'")
-set(CURA_CLOUD_API_ROOT "" CACHE STRING "Alternative Cura cloud API root")
-set(CURA_CLOUD_API_VERSION "" CACHE STRING "Alternative Cura cloud API version")
-set(CURA_CLOUD_ACCOUNT_API_ROOT "" CACHE STRING "Alternative Cura cloud account API version")
+set(CURA_APP_NAME "cura" CACHE STRING "Short name of Divid, used for configuration folder")
+set(CURA_APP_DISPLAY_NAME "Zmorph Divid" CACHE STRING "Display name of Divid")
+set(CURA_VERSION "master" CACHE STRING "Version name of Divid")
+set(CURA_BUILDTYPE "" CACHE STRING "Build type of Divid, eg. 'PPA'")
+set(CURA_CLOUD_API_ROOT "" CACHE STRING "Alternative Divid cloud API root")
+set(CURA_CLOUD_API_VERSION "" CACHE STRING "Alternative Divid cloud API version")
+set(CURA_CLOUD_ACCOUNT_API_ROOT "" CACHE STRING "Alternative Divid cloud account API version")
 set(CURA_MARKETPLACE_ROOT "" CACHE STRING "Alternative Marketplace location")
 set(CURA_DIGITAL_FACTORY_URL "" CACHE STRING "Alternative Digital Factory location")
 
@@ -84,7 +84,7 @@ if(NOT APPLE AND NOT WIN32)
     endif()
     install(FILES ${CMAKE_BINARY_DIR}/com.ultimaker.cura.desktop
             DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
-    install(FILES ${CMAKE_SOURCE_DIR}/resources/images/cura-icon.png
+    install(FILES ${CMAKE_SOURCE_DIR}/resources/images/divid-icon.png
             DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/128x128/apps/)
     install(FILES com.ultimaker.cura.appdata.xml
             DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
