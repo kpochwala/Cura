@@ -117,13 +117,13 @@ UM.Dialog
                 {
                     text: model.description
                     elide: Text.ElideRight
-                    width: (projectsList.width * 0.45) | 0
+                    width: (projectsList.width * 0.25) | 0
                 }
                 Label
                 {
                     text: model.license
                     elide: Text.ElideRight
-                    width: (projectsList.width * 0.30) | 0
+                    width: (projectsList.width * 0.50) | 0
                 }
             }
             model: ListModel
